@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Менеджер задач | WebSocket</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Canvas для фоновой анимации -->
+    <canvas id="particle-canvas"></canvas>
+    
+    <div class="container">
+        <!-- Заголовок с кнопкой выхода -->
+        <header class="header">
+            <div class="header-content">
+                <h1>Менеджер задач</h1>
+                <button id="logoutBtn" class="logout-btn">Выйти</button>
+            </div>
+        </header>
+
+        <!-- Панель добавления -->
+        <section class="add-task-panel">
+            <form id="taskForm" class="task-form">
+                <div class="form-row">
+                    <input type="text" id="taskTitle" placeholder="Введите задачу..." required>
+                    <input type="date" id="taskDueDate">
+                    <input type="file" id="taskAttachment" accept="*/*">
+                    <button type="submit" class="btn">Добавить</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Панели задач -->
+        <div class="task-panels">
+            <!-- Все задачи -->
+            <section class="task-panel panel-all">
+                <h2>Все задачи</h2>
+                <ul id="allTasks" class="task-list"></ul>
+            </section>
+
+            <!-- Активные -->
+            <section class="task-panel panel-active">
+                <h2>Активные</h2>
+                <ul id="activeTasks" class="task-list"></ul>
+            </section>
+
+            <!-- Завершённые -->
+            <section class="task-panel panel-completed">
+                <h2>Завершённые</h2>
+                <ul id="completedTasks" class="task-list"></ul>
+            </section>
+        </div>
+    </div>
+    
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

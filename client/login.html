@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход - Менеджер задач</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Canvas для фоновой анимации -->
+    <canvas id="particle-canvas"></canvas>
+    
+    <div class="container">
+        <div class="auth-container">
+            <header class="header">
+                <h1>Менеджер задач</h1>
+                <p>Добро пожаловать в будущее управления задачами</p>
+            </header>
+
+            <div class="auth-tabs">
+                <button class="tab-btn active" data-tab="login">Вход</button>
+                <button class="tab-btn" data-tab="register">Регистрация</button>
+            </div>
+
+            <!-- Форма входа -->
+            <form id="loginForm" class="auth-form active" data-form="login">
+                <div class="form-group">
+                    <input type="text" id="loginUsername" placeholder="Логин" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="loginPassword" placeholder="Пароль" required>
+                </div>
+                <button type="submit" class="btn btn-auth">Войти в систему</button>
+            </form>
+
+            <!-- Форма регистрации -->
+            <form id="registerForm" class="auth-form" data-form="register">
+                <div class="form-group">
+                    <input type="text" id="registerUsername" placeholder="Логин (мин. 3 символа)" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="registerPassword" placeholder="Пароль (мин. 6 символов)" required>
+                </div>
+                <button type="submit" class="btn btn-auth">Создать аккаунт</button>
+            </form>
+
+            <div id="authMessage" class="message"></div>
+        </div>
+    </div>
+    
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>
